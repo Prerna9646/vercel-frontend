@@ -29,7 +29,7 @@ function App() {
       }}
     >
       <h1 style={{ color: "#2c1897ff", marginBottom: "10px" }}>
-        Blue/Green CI-CD Simulation
+         CI-CD Pipeline Simulation
       </h1>
 
       <h3 style={{ color: "#16a34a", marginBottom: "30px" }}>
