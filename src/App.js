@@ -5,7 +5,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/data")
+    fetch("https://vercel-backend-olive.vercel.app/api/data")
       .then((res) => res.json())
       .then((info) => {
         setData(info);
