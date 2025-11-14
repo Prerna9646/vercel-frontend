@@ -31,5 +31,11 @@ jobs:
   # -------- SMOKE TEST --------
       - name: Smoke Test Frontend
         run: |
-          echo "Running frontend homepage check..."
-          curl -f ${{ secrets.FRONTEND_URL }}
+          echo "Checking frontend..."
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://vercel-frontend-eight-ruddy.vercel.app/)
+          if [ "$STATUS" -ne 200 ]; then
+            echo "❌ Frontend smoke test failed! Status: $STATUS"
+            exit 1
+          else
+            echo "✅ Frontend smoke test passed! Status: $STATUS"
+          fi
