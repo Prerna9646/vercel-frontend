@@ -27,3 +27,9 @@ jobs:
         run: |
           npm install -g vercel
           vercel deploy --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
+          
+  # -------- SMOKE TEST --------
+      - name: Smoke Test Frontend
+        run: |
+          echo "Running frontend homepage check..."
+          curl -f ${{ secrets.FRONTEND_URL }}
